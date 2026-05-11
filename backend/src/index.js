@@ -23,4 +23,6 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
+const dbUrl = process.env.DATABASE_URL;
+console.log('DATABASE_URL:', dbUrl ? `${dbUrl.slice(0, 30)}...` : 'UNDEFINED');
 app.listen(PORT, () => console.log(`Backend escuchando en puerto ${PORT}`));
