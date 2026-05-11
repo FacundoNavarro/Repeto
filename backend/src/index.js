@@ -15,10 +15,6 @@ app.use('/api/srs',        require('./routes/srs'));
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
-app.get('/debug-env', (req, res) => {
-  const url = process.env.DATABASE_URL;
-  res.json({ DATABASE_URL: url ? `${url.slice(0, 40)}...` : 'UNDEFINED' });
-});
 
 // Error handler global — captura errores no manejados en controllers
 app.use((err, req, res, next) => {
@@ -27,6 +23,4 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
-const dbUrl = process.env.DATABASE_URL;
-console.log('DATABASE_URL:', dbUrl ? `${dbUrl.slice(0, 30)}...` : 'UNDEFINED');
 app.listen(PORT, () => console.log(`Backend escuchando en puerto ${PORT}`));
