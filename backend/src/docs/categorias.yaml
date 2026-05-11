@@ -1,0 +1,91 @@
+paths:
+  /api/categorias:
+    get:
+      summary: Listar categorías
+      tags: [Categorías]
+      responses:
+        '200':
+          description: Lista de categorías
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Categoria'
+    post:
+      summary: Crear categoría
+      tags: [Categorías]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [nombre]
+              properties:
+                nombre:      { type: string, example: Phrasal verbs }
+                descripcion: { type: string, example: Verbos con partículas }
+                color:       { type: string, example: '#9B59B6' }
+      responses:
+        '201':
+          description: Categoría creada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+
+  /api/categorias/{id}:
+    get:
+      summary: Obtener categoría
+      tags: [Categorías]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+        '404':
+          description: No encontrada
+    put:
+      summary: Actualizar categoría
+      tags: [Categorías]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:      { type: string }
+                descripcion: { type: string }
+                color:       { type: string }
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+        '404':
+          description: No encontrada
+    delete:
+      summary: Eliminar categoría
+      tags: [Categorías]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Eliminada
+        '404':
+          description: No encontrada

@@ -39,6 +39,6 @@ async function migrate() {
 }
 
 migrate().catch(err => {
-  console.error('Error en migraciones:', err.message);
+  console.error('Error en migraciones:', err.message || err);
   process.exit(1);
 });

@@ -1,0 +1,100 @@
+paths:
+  /api/palabras:
+    get:
+      summary: Listar palabras
+      tags: [Palabras]
+      parameters:
+        - in: query
+          name: categoria_id
+          schema: { type: integer }
+          description: Filtrar por categoría
+      responses:
+        '200':
+          description: Lista de palabras
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Palabra'
+    post:
+      summary: Crear palabra
+      tags: [Palabras]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [palabra, traduccion, categoria_id]
+              properties:
+                palabra:         { type: string, example: accomplish }
+                traduccion:      { type: string, example: lograr, alcanzar }
+                ejemplo_uso:     { type: string, example: She accomplished her goal. }
+                categoria_id:    { type: integer, example: 1 }
+                dificultad_base: { type: integer, enum: [1, 2, 3], default: 1 }
+      responses:
+        '201':
+          description: Palabra creada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Palabra'
+
+  /api/palabras/{id}:
+    get:
+      summary: Obtener palabra
+      tags: [Palabras]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Palabra'
+        '404':
+          description: No encontrada
+    put:
+      summary: Actualizar palabra
+      tags: [Palabras]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                palabra:         { type: string }
+                traduccion:      { type: string }
+                ejemplo_uso:     { type: string }
+                categoria_id:    { type: integer }
+                dificultad_base: { type: integer, enum: [1, 2, 3] }
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Palabra'
+        '404':
+          description: No encontrada
+    delete:
+      summary: Eliminar palabra
+      tags: [Palabras]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Eliminada
+        '404':
+          description: No encontrada

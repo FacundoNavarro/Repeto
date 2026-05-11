@@ -1,0 +1,57 @@
+paths:
+  /api/srs/hoy:
+    get:
+      summary: Palabras para estudiar hoy (SRS)
+      tags: [SRS]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Lista de palabras con revisión pendiente (máx 20)
+
+  /api/srs/progreso:
+    get:
+      summary: Progreso completo del usuario
+      tags: [SRS]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Todas las palabras con su nivel, intervalo y estadísticas
+
+  /api/srs/inicializar/{palabra_id}:
+    post:
+      summary: Agregar una palabra al progreso del usuario
+      tags: [SRS]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: palabra_id
+          required: true
+          schema: { type: integer }
+      responses:
+        '201':
+          description: Palabra agregada al progreso
+        '409':
+          description: La palabra ya estaba en el progreso
+
+  /api/srs/responder:
+    post:
+      summary: Registrar respuesta y actualizar SRS
+      tags: [SRS]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [palabra_id, calificacion]
+              properties:
+                palabra_id:   { type: integer, example: 1 }
+                calificacion: { type: integer, enum: [0,1,2,3,4,5], example: 4 }
+      responses:
+        '200':
+          description: Progreso actualizado + fecha de próxima revisión
