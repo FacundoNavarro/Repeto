@@ -10,6 +10,7 @@ import RegisterScreen from './src/screens/RegisterScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import StudyScreen from './src/screens/StudyScreen';
 import CategoriasScreen from './src/screens/CategoriasScreen';
+import DashboardScreen from './src/screens/DashboardScreen';
 import { RootStackParamList, TabParamList } from './src/types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -34,6 +35,11 @@ function MainTabs() {
         name="Categorias"
         component={CategoriasScreen}
         options={{ title: 'Categorías', tabBarLabel: 'Categorías' }}
+      />
+      <Tab.Screen
+        name="Dashboard"
+        component={DashboardScreen}
+        options={{ title: 'Mi progreso', tabBarLabel: 'Progreso' }}
       />
     </Tab.Navigator>
   );

@@ -12,6 +12,7 @@ app.use('/api/auth',       require('./routes/auth'));
 app.use('/api/categorias', require('./routes/categorias'));
 app.use('/api/palabras',   require('./routes/palabras'));
 app.use('/api/srs',        require('./routes/srs'));
+app.use('/api/stats',      require('./routes/stats'));
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.get('/health', (req, res) => res.json({ status: 'ok' }));

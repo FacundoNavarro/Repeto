@@ -24,6 +24,35 @@ export type PalabraHoy = Palabra & {
   errores: number;
 };
 
+export type Stats = {
+  nivel_global: number;
+  total_palabras: number;
+  palabras_dominadas: number;
+  aciertos_total: number;
+  errores_total: number;
+  pendientes_hoy: number;
+  racha_dias: number;
+  distribucion_niveles: { nivel: number; cantidad: number }[];
+  por_categoria: {
+    id: number;
+    nombre: string;
+    color: string | null;
+    total: number;
+    dominadas: number;
+    promedio_nivel: number;
+  }[];
+  sesiones_recientes: {
+    id: number;
+    fecha: string;
+    palabras_vistas: number;
+    aciertos: number;
+    errores: number;
+    duracion_segundos: number | null;
+    modo: 'srs' | 'libre';
+    categoria_nombre: string | null;
+  }[];
+};
+
 export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
@@ -34,4 +63,5 @@ export type RootStackParamList = {
 export type TabParamList = {
   Home: undefined;
   Categorias: undefined;
+  Dashboard: undefined;
 };

@@ -51,4 +51,7 @@ export const api = {
         `/api/palabras${categoria_id ? `?categoria_id=${categoria_id}` : ''}`
       ),
   },
+  stats: {
+    mis: () => request<import('../types').Stats>('/api/stats'),
+  },
 };
