@@ -36,10 +36,29 @@ export const api = {
   },
   srs: {
     hoy: () => request<import('../types').PalabraHoy[]>('/api/srs/hoy'),
+    estadoDeck: () => request<import('../types').EstadoDeck>('/api/srs/estado-deck'),
+    inicializarNivel: () =>
+      request<{ agregadas: number; nivel_global: number; max_dificultad: number; mensaje?: string }>(
+        '/api/srs/inicializar-nivel',
+        { method: 'POST' }
+      ),
     responder: (palabra_id: number, calificacion: number) =>
       request('/api/srs/responder', {
         method: 'POST',
         body: JSON.stringify({ palabra_id, calificacion }),
+      }),
+    inicializar: (palabra_id: number) =>
+      request(`/api/srs/inicializar/${palabra_id}`, { method: 'POST' }),
+    guardarSesionLibre: (data: {
+      categoria_id: number | null;
+      palabras_vistas: number;
+      aciertos: number;
+      errores: number;
+      duracion_segundos: number | null;
+    }) =>
+      request('/api/srs/sesiones/libre', {
+        method: 'POST',
+        body: JSON.stringify(data),
       }),
   },
   categorias: {

@@ -24,6 +24,15 @@ export type PalabraHoy = Palabra & {
   errores: number;
 };
 
+export type EstadoDeck = {
+  total_en_deck: number;
+  dominadas: number;
+  nivel_global: number;
+  max_dificultad: number;
+  pendientes_hoy: number;
+  disponibles_para_agregar: number;
+};
+
 export type Stats = {
   nivel_global: number;
   total_palabras: number;
@@ -59,6 +68,8 @@ export type RootStackParamList = {
   Register: undefined;
   Main: undefined;
   Study: undefined;
+  AgregarPalabras: undefined;
+  ModoLibre: undefined;
 };
 
 export type TabParamList = {
