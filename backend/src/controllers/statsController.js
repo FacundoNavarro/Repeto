@@ -65,6 +65,15 @@ async function miStats(req, res) {
 
   const racha = calcularRacha(diasEstudio.map(r => r.dia));
 
+  // Actividad últimos 7 días
+  const { rows: semana } = await pool.query(
+    `SELECT DATE(fecha) AS dia, COALESCE(SUM(palabras_vistas), 0)::int AS palabras
+     FROM sesion_estudio
+     WHERE usuario_id = $1 AND fecha >= NOW() - INTERVAL '7 days'
+     GROUP BY DATE(fecha)`,
+    [usuarioId]
+  );
+
   // Nivel global: 70% promedio de niveles + 30% porcentaje de palabras dominadas
   const stats = progreso[0];
   const nivelGlobal = stats.total_palabras === 0
@@ -82,6 +91,7 @@ async function miStats(req, res) {
     errores_total: stats.errores_total,
     pendientes_hoy: stats.pendientes_hoy,
     racha_dias: racha,
+    semana: semana,
     distribucion_niveles: distribucion,
     por_categoria: porCategoria,
     sesiones_recientes: sesiones,
