@@ -32,6 +32,7 @@ export type Stats = {
   errores_total: number;
   pendientes_hoy: number;
   racha_dias: number;
+  semana: { dia: string; palabras: number }[];
   distribucion_niveles: { nivel: number; cantidad: number }[];
   por_categoria: {
     id: number;

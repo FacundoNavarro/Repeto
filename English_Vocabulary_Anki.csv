@@ -1,0 +1,332 @@
+Level,Category,Word/Phrase,Type,Example Sentence,Notes
+A1,Greetings & Expressions,Hello / Hi,expr.,Hello! My name is John.,Basic greeting
+A1,Greetings & Expressions,Goodbye / Bye,expr.,Goodbye! See you tomorrow.,Farewell
+A1,Greetings & Expressions,Good morning,expr.,Good morning! How are you?,Before noon
+A1,Greetings & Expressions,Good afternoon,expr.,Good afternoon everyone.,Noon to 6pm
+A1,Greetings & Expressions,Good night,expr.,Good night! Sleep well.,At bedtime
+A1,Greetings & Expressions,Please,adv.,Can I have water please?,Politeness
+A1,Greetings & Expressions,Thank you / Thanks,expr.,Thank you for your help.,Gratitude
+A1,Greetings & Expressions,You're welcome,expr.,Thank you! — You're welcome.,Response to thanks
+A1,Greetings & Expressions,Sorry / Excuse me,expr.,Sorry I don't understand.,Apology / attention
+A1,Greetings & Expressions,Yes / No,expr.,Yes I like coffee. No I don't.,Agreement / denial
+A1,Numbers,One two three,num.,I have three cats.,1 2 3
+A1,Numbers,Four five six,num.,She is six years old.,4 5 6
+A1,Numbers,Seven eight nine ten,num.,There are ten students.,7–10
+A1,Numbers,Eleven to twenty,num.,I am fifteen years old.,11–20
+A1,Numbers,Twenty-one thirty...,num.,He is thirty years old.,Tens: 20–90
+A1,Numbers,One hundred,num.,There are one hundred people.,100
+A1,Numbers,First second third,ord.,She is in first place.,Ordinals 1st–3rd
+A1,Colors,Red,adj.,The apple is red.,Color
+A1,Colors,Blue,adj.,The sky is blue.,Color
+A1,Colors,Green,adj.,Grass is green.,Color
+A1,Colors,Yellow,adj.,The sun is yellow.,Color
+A1,Colors,Black,adj.,The cat is black.,Color
+A1,Colors,White,adj.,Snow is white.,Color
+A1,Colors,Orange,adj.,The orange is orange.,Color
+A1,Colors,Pink,adj.,Her dress is pink.,Color
+A1,Colors,Brown,adj.,The table is brown.,Color
+A1,Colors,Grey / Gray,adj.,The clouds are grey today.,Color
+A1,Family Members,Mother / Mom,n.,My mother is a doctor.,Female parent
+A1,Family Members,Father / Dad,n.,My father works in a bank.,Male parent
+A1,Family Members,Sister,n.,I have two sisters.,Female sibling
+A1,Family Members,Brother,n.,My brother is ten years old.,Male sibling
+A1,Family Members,Grandmother / Grandma,n.,My grandmother loves cooking.,Parent's mother
+A1,Family Members,Grandfather / Grandpa,n.,My grandfather tells great stories.,Parent's father
+A1,Family Members,Aunt,n.,My aunt lives in Paris.,Parent's sister
+A1,Family Members,Uncle,n.,My uncle is very funny.,Parent's brother
+A1,Family Members,Cousin,n.,I have five cousins.,Aunt/uncle's child
+A1,Family Members,Son / Daughter,n.,They have one son and two daughters.,Child (m/f)
+A1,Body Parts,Head,n.,I have a headache.,Top of body
+A1,Body Parts,Eye(s),n.,She has blue eyes.,For seeing
+A1,Body Parts,Ear(s),n.,He has big ears.,For hearing
+A1,Body Parts,Nose,n.,My nose is cold.,For smelling
+A1,Body Parts,Mouth,n.,Open your mouth.,For eating/speaking
+A1,Body Parts,Hand(s),n.,Wash your hands.,End of arm
+A1,Body Parts,Foot / Feet,n.,My feet hurt.,End of leg
+A1,Body Parts,Arm(s),n.,She broke her arm.,Upper limb
+A1,Body Parts,Leg(s),n.,He has long legs.,Lower limb
+A1,Body Parts,Back,n.,My back hurts after sitting.,Rear of torso
+A1,Common Verbs,Be (am / is / are),v.,I am happy. She is tall.,State of being
+A1,Common Verbs,Have,v.,I have a dog.,Possession
+A1,Common Verbs,Do,v.,What do you do?,Action / auxiliary
+A1,Common Verbs,Go,v.,I go to school every day.,Movement
+A1,Common Verbs,Come,v.,Come here please.,Approach
+A1,Common Verbs,See,v.,I can see the mountains.,Sight
+A1,Common Verbs,Eat,v.,We eat dinner at 7.,Consume food
+A1,Common Verbs,Drink,v.,I drink coffee every morning.,Consume liquid
+A1,Common Verbs,Like,v.,I like music.,Preference
+A1,Common Verbs,Want,v.,I want a glass of water.,Desire
+A1,Common Verbs,Know,v.,I know the answer.,Knowledge
+A1,Common Verbs,Say,v.,What did she say?,Speak / tell
+A1,Common Verbs,Get,v.,Can you get some milk?,Obtain / receive
+A1,Common Verbs,Work,v.,She works in an office.,Employment
+A1,Common Verbs,Live,v.,I live in Buenos Aires.,Reside
+A1,Basic Adjectives,Big / Small,adj.,The elephant is big. The mouse is small.,Size
+A1,Basic Adjectives,Tall / Short,adj.,He is tall. She is short.,Height
+A1,Basic Adjectives,Hot / Cold,adj.,The soup is hot. The ice cream is cold.,Temperature
+A1,Basic Adjectives,Good / Bad,adj.,This is a good book. That was bad news.,Quality
+A1,Basic Adjectives,New / Old,adj.,I have a new phone. This is an old book.,Age
+A1,Basic Adjectives,Happy / Sad,adj.,She is happy today. He looks sad.,Emotion
+A1,Basic Adjectives,Fast / Slow,adj.,The car is fast. The turtle is slow.,Speed
+A1,Basic Adjectives,Easy / Difficult,adj.,This test is easy. That one is difficult.,Complexity
+A1,Basic Adjectives,Beautiful / Ugly,adj.,What a beautiful day!,Appearance
+A1,Basic Adjectives,Right / Wrong,adj.,That answer is right.,Correctness
+A1,Basic Prepositions,In,prep.,The cat is in the box.,Inside
+A1,Basic Prepositions,On,prep.,The book is on the table.,On a surface
+A1,Basic Prepositions,At,prep.,She is at school.,Point / location
+A1,Basic Prepositions,Under,prep.,The dog is under the chair.,Below
+A1,Basic Prepositions,Next to / Beside,prep.,The bank is next to the supermarket.,Adjacent
+A1,Basic Prepositions,Between,prep.,The shop is between the bank and the café.,In the middle
+A1,Basic Prepositions,In front of,prep.,He is standing in front of the door.,Before / facing
+A1,Basic Prepositions,Behind,prep.,The garden is behind the house.,At the back
+A1,Days & Months,Monday – Sunday,n.,I work from Monday to Friday.,Days of the week
+A1,Days & Months,January – December,n.,My birthday is in March.,Months of the year
+A1,Days & Months,Today / Yesterday / Tomorrow,adv.,Today is Monday.,Time reference
+A1,Days & Months,Morning / Afternoon / Evening / Night,n.,I study in the morning.,Parts of the day
+A1,Days & Months,Week / Month / Year,n.,I exercise three times a week.,Time periods
+A1,Food & Drink,Water / Juice / Coffee / Tea,n.,I drink coffee every morning.,Common drinks
+A1,Food & Drink,Bread / Rice / Pasta,n.,We eat rice with dinner.,Carbohydrates
+A1,Food & Drink,Meat / Chicken / Fish,n.,I like chicken soup.,Proteins
+A1,Food & Drink,Fruit / Vegetables,n.,Eat more fruit and vegetables.,Natural foods
+A1,Food & Drink,Milk / Cheese / Egg(s),n.,I have eggs for breakfast.,Dairy & eggs
+A1,Food & Drink,Breakfast / Lunch / Dinner,n.,We have dinner at 8 pm.,Meals
+A2,Verb + Preposition,Listen to,v. + prep.,I love listening to music.,Attention to sound
+A2,Verb + Preposition,Look at,v. + prep.,Look at the board please.,Direct gaze
+A2,Verb + Preposition,Look for,v. + prep.,I'm looking for my keys.,Search for
+A2,Verb + Preposition,Wait for,v. + prep.,I waited for the bus for 20 minutes.,Expect arrival
+A2,Verb + Preposition,Talk to / with,v. + prep.,I need to talk to my teacher.,Communicate
+A2,Verb + Preposition,Think about,v. + prep.,I'm thinking about my holidays.,Consider / reflect
+A2,Verb + Preposition,Ask for,v. + prep.,He asked for more time.,Request
+A2,Verb + Preposition,Pay for,v. + prep.,I paid for the coffee.,Pay the cost
+A2,Verb + Preposition,Arrive at / in,v. + prep.,We arrived at the airport. / I arrived in London.,"at = small place; in = city/country"
+A2,Verb + Preposition,Belong to,v. + prep.,This bag belongs to Maria.,Possession
+A2,Verb + Preposition,Laugh at,v. + prep.,Don't laugh at people.,Find funny / mock
+A2,Verb + Preposition,Agree with,v. + prep.,I agree with you completely.,Share opinion
+A2,Verb + Preposition,Disagree with,v. + prep.,She disagrees with the plan.,Opposite view
+A2,Verb + Preposition,Depend on,v. + prep.,It depends on the weather.,Rely / be determined by
+A2,Verb + Preposition,Believe in,v. + prep.,I believe in hard work.,Have faith in
+A2,Verb + Preposition,Worry about,v. + prep.,Don't worry about the exam.,Feel anxious
+A2,Verb + Preposition,Dream about / of,v. + prep.,She dreams about travelling.,Have aspirations
+A2,Verb + Preposition,Speak to / with,v. + prep.,Can I speak to the manager?,Address someone
+A2,Verb + Preposition,Apologize for,v. + prep.,I apologize for being late.,Say sorry for sth
+A2,Verb + Preposition,Congratulate on,v. + prep.,I congratulate you on your promotion.,Praise an achievement
+A2,Adjective + Preposition,Good at,adj. + prep.,She is good at maths.,Skilled in
+A2,Adjective + Preposition,Bad at,adj. + prep.,I'm bad at drawing.,Not skilled in
+A2,Adjective + Preposition,Interested in,adj. + prep.,Are you interested in science?,Find interesting
+A2,Adjective + Preposition,Afraid of,adj. + prep.,He is afraid of spiders.,Fear
+A2,Adjective + Preposition,Bored with / of,adj. + prep.,I'm bored with this game.,No longer interested
+A2,Adjective + Preposition,Excited about,adj. + prep.,She is excited about the trip.,Feeling enthusiasm
+A2,Adjective + Preposition,Tired of,adj. + prep.,I'm tired of waiting.,Fed up with
+A2,Adjective + Preposition,Happy with / about,adj. + prep.,I'm happy with my results.,Satisfied
+A2,Adjective + Preposition,Famous for,adj. + prep.,Paris is famous for the Eiffel Tower.,Known because of
+A2,Adjective + Preposition,Married to,adj. + prep.,She is married to a doctor.,Wedded
+A2,Adjective + Preposition,Different from,adj. + prep.,Your idea is different from mine.,Not the same
+A2,Adjective + Preposition,Similar to,adj. + prep.,This colour is similar to blue.,Alike
+A2,Phrasal Verbs,Get up,phr. v.,I get up at 7 every morning.,Rise from bed
+A2,Phrasal Verbs,Go on,phr. v.,Please go on — I'm listening.,Continue
+A2,Phrasal Verbs,Turn on / off,phr. v.,Turn off the lights when you leave.,Activate / deactivate
+A2,Phrasal Verbs,Put on,phr. v.,Put on your coat — it's cold.,Wear clothing
+A2,Phrasal Verbs,Take off,phr. v.,Take off your shoes at the door.,Remove clothing / depart (plane)
+A2,Phrasal Verbs,Come back,phr. v.,I'll come back later.,Return
+A2,Phrasal Verbs,Look up,phr. v.,Look up the word in the dictionary.,Search for info
+A2,Phrasal Verbs,Wake up,phr. v.,What time do you wake up?,Stop sleeping
+A2,Phrasal Verbs,Pick up,phr. v.,Can you pick up the kids?,Collect / lift
+A2,Phrasal Verbs,Give up,phr. v.,Don't give up! You can do it.,Stop trying / quit
+A2,Phrasal Verbs,Find out,phr. v.,I need to find out the time.,Discover information
+A2,Phrasal Verbs,Go out,phr. v.,We go out every Friday night.,Leave home / socialise
+A2,Time Expressions,Always / Usually / Often,adv.,I always brush my teeth.,Frequency: 100% / 75% / 50%
+A2,Time Expressions,Sometimes / Rarely / Never,adv.,I sometimes watch TV.,Frequency: 25% / 10% / 0%
+A2,Time Expressions,Every day / week / month,expr.,I exercise every day.,Recurrence
+A2,Time Expressions,Once / Twice / Three times a week,expr.,I go to the gym twice a week.,Frequency quantity
+A2,Time Expressions,In the morning / afternoon / evening,expr.,I study in the evening.,Part of day
+A2,Time Expressions,At the moment / right now,expr.,I'm busy at the moment.,Present action
+A2,Time Expressions,Last night / week / year,expr.,I saw a film last night.,Recent past
+A2,Time Expressions,Next week / month / year,expr.,I'm travelling next month.,Near future
+A2,Time Expressions,Already / Yet / Still,adv.,"I've already eaten. Have you finished yet? She still works there.",Timing relative to now
+A2,Time Expressions,Ago,adv.,I moved here two years ago.,Past time from now
+A2,Shopping & Money,Buy / Sell,v.,I want to buy a new phone.,Purchase / offer for sale
+A2,Shopping & Money,Price / Cost,n.,What's the price of this jacket?,Amount to pay
+A2,Shopping & Money,Cheap / Expensive,adj.,This restaurant is cheap.,Low / high cost
+A2,Shopping & Money,On sale / Discount,expr.,These shoes are on sale — 50% off!,Reduced price
+A2,Shopping & Money,Pay by card / cash,expr.,Can I pay by card?,Payment method
+A2,Shopping & Money,Change (money),n.,Here's your change.,Money returned
+A2,Shopping & Money,Receipt,n.,Can I have a receipt please?,Proof of purchase
+A2,Shopping & Money,Size (S/M/L/XL),n.,What size are you?,Clothing measurement
+A2,Travel & Transport,Plane / Fly / Flight,n./v.,Our flight departs at 8 am.,Air travel
+A2,Travel & Transport,Train / Station,n.,The train leaves from platform 3.,Rail travel
+A2,Travel & Transport,Bus / Bus stop,n.,Take the bus to the city centre.,Road transport
+A2,Travel & Transport,Ticket (single / return),n.,A return ticket to Madrid please.,Travel document
+A2,Travel & Transport,Passport / Visa,n.,Don't forget your passport.,Travel documents
+A2,Travel & Transport,Hotel / Hostel,n.,We stayed in a nice hotel.,Accommodation
+A2,Travel & Transport,Book / Reserve,v.,I booked a table for two.,Make a reservation
+A2,Travel & Transport,Check in / Check out,phr. v.,Check-in is at 3 pm.,Arrive at / leave hotel
+A2,Travel & Transport,Straight on / Turn left / right,expr.,Go straight on and turn left.,Navigation
+A2,Travel & Transport,Map / GPS,n.,Use your GPS to find the hotel.,Navigation tools
+A2,Health & Body,Headache / Stomachache / Toothache,n.,I have a terrible headache.,Common pains
+A2,Health & Body,Cold / Flu / Fever,n.,She has a cold and a fever.,Common illnesses
+A2,Health & Body,Doctor / Hospital / Pharmacy,n.,Go to the doctor if you feel worse.,Medical places
+A2,Health & Body,Medicine / Tablet / Injection,n.,Take this medicine twice a day.,Treatments
+A2,Health & Body,Hurt / Ache,v.,My back hurts after exercise.,Feel pain
+A2,Health & Body,Feel well / Feel sick,expr.,I don't feel well today.,General health
+B1,Collocations,Make a decision,collocn.,It's time to make a decision.,MAKE: create / produce
+B1,Collocations,Make an effort,collocn.,You need to make more effort.,
+B1,Collocations,Make a mistake,collocn.,Everyone makes mistakes.,
+B1,Collocations,Make progress,collocn.,She's making great progress.,
+B1,Collocations,Do homework,collocn.,Have you done your homework?,DO: tasks / activities
+B1,Collocations,Do the washing up,collocn.,Can you do the washing up?,
+B1,Collocations,Do your best,collocn.,Just do your best in the exam.,
+B1,Collocations,Do damage,collocn.,The storm did a lot of damage.,
+B1,Collocations,Have a conversation,collocn.,We had a long conversation.,HAVE: experience
+B1,Collocations,Have a rest,collocn.,You should have a rest.,
+B1,Collocations,Have a good time,collocn.,Did you have a good time?,
+B1,Collocations,Have difficulty (in),collocn.,I have difficulty in remembering names.,
+B1,Collocations,Take a break,collocn.,Let's take a break for 10 minutes.,TAKE: obtain / use
+B1,Collocations,Take an exam / test,collocn.,I'm taking my driving test next week.,
+B1,Collocations,Take care of,collocn.,She takes care of her elderly parents.,
+B1,Collocations,Take part in,collocn.,I want to take part in the competition.,
+B1,Connectors & Discourse Markers,However,conj.,I like cats. However I'm allergic to them.,Contrast (formal)
+B1,Connectors & Discourse Markers,Although / Even though,conj.,Although it was cold we went out.,Contrast in same sentence
+B1,Connectors & Discourse Markers,Despite / In spite of,prep.,Despite the rain we had fun.,Contrast + noun / gerund
+B1,Connectors & Discourse Markers,Therefore / As a result,adv.,He studied hard; therefore he passed.,Cause & effect
+B1,Connectors & Discourse Markers,Furthermore / In addition,adv.,Furthermore the price includes breakfast.,Adding info
+B1,Connectors & Discourse Markers,On the other hand,expr.,Dogs are loyal; on the other hand cats are independent.,Alternative view
+B1,Connectors & Discourse Markers,For example / For instance,expr.,Many fruits are healthy for example oranges.,Exemplification
+B1,Connectors & Discourse Markers,In conclusion / To sum up,expr.,In conclusion we need more investment.,Summarise / close
+B1,Connectors & Discourse Markers,Unless,conj.,We'll go unless it rains.,Condition (negative if)
+B1,Connectors & Discourse Markers,As long as / Provided that,conj.,You can stay as long as you behave.,Condition (positive)
+B1,Phrasal Verbs,Carry on,phr. v.,Carry on — don't let me interrupt.,Continue
+B1,Phrasal Verbs,Run out of,phr. v.,We've run out of milk.,Exhaust supply
+B1,Phrasal Verbs,Look after,phr. v.,She looks after her younger siblings.,Take care of
+B1,Phrasal Verbs,Bring up,phr. v.,She was brought up in the countryside.,Raise a child / mention a topic
+B1,Phrasal Verbs,Come across,phr. v.,I came across an old photo.,Find by chance
+B1,Phrasal Verbs,Deal with,phr. v.,How do you deal with stress?,Handle / manage
+B1,Phrasal Verbs,End up,phr. v.,We got lost and ended up in the wrong city.,Result in / finally arrive
+B1,Phrasal Verbs,Set up,phr. v.,She set up her own business.,Establish / arrange
+B1,Phrasal Verbs,Go through,phr. v.,He went through a difficult time.,Experience something hard
+B1,Phrasal Verbs,Turn out,phr. v.,The film turned out to be great.,Result / prove to be
+B1,Phrasal Verbs,Point out,phr. v.,She pointed out a mistake in my work.,Draw attention to
+B1,Phrasal Verbs,Give in,phr. v.,He finally gave in and accepted.,Stop resisting / surrender
+B1,Work & Career,Apply for (a job),v.,I'm applying for a marketing job.,Submit an application
+B1,Work & Career,CV / Resume,n.,Send me your CV.,Work history document
+B1,Work & Career,Interview,n./v.,I have a job interview tomorrow.,Meeting for selection
+B1,Work & Career,Salary / Wage,n.,She earns a good salary.,Salary = monthly; wage = hourly
+B1,Work & Career,Promotion,n.,He got a promotion last year.,Move to higher role
+B1,Work & Career,Colleague,n.,My colleagues are very friendly.,Workmate
+B1,Work & Career,Employer / Employee,n.,The employer provides health insurance.,Company / worker
+B1,Work & Career,Deadline,n.,The deadline for the report is Friday.,Final date for task
+B1,Work & Career,Meeting / Conference,n.,We have a team meeting at 10.,Organised gathering
+B1,Work & Career,Retire / Retirement,v./n.,She retired at 65.,Stop working (officially)
+B1,Environment & Nature,Pollution,n.,Air pollution is a serious problem.,Contamination
+B1,Environment & Nature,Climate change,n.,Climate change affects everyone.,Long-term shifts in weather
+B1,Environment & Nature,Renewable energy,n.,We should invest in renewable energy.,"Solar, wind, etc."
+B1,Environment & Nature,Recycle / Recycling,v./n.,Please recycle your bottles.,Reuse material
+B1,Environment & Nature,Greenhouse gas,n.,CO2 is a greenhouse gas.,Traps heat in atmosphere
+B1,Environment & Nature,Deforestation,n.,Deforestation destroys wildlife habitats.,Removing forests
+B1,Environment & Nature,Endangered (species),adj.,Pandas are an endangered species.,At risk of extinction
+B1,Environment & Nature,Drought / Flood,n.,The drought destroyed the crops.,Extreme weather events
+B1,Education,Degree / Diploma,n.,She has a degree in Economics.,Qualification
+B1,Education,Graduate / Graduate from,v.,He graduated from university in 2022.,Finish a course
+B1,Education,Scholarship,n.,She won a scholarship to study abroad.,Financial award for study
+B1,Education,Assignment / Essay,n.,I need to finish my assignment.,Academic task
+B1,Education,Revise / Review,v.,I need to revise for the exam.,Study again to prepare
+B1,Education,Pass / Fail (an exam),v.,I hope I pass the exam.,Succeed / not succeed
+B1,Education,Lecturer / Professor,n.,Our professor is very knowledgeable.,University teacher
+B1,Education,Subject / Course,n.,My favourite subject is History.,Area of study
+B2,Formal & Academic Vocabulary,Analyse / Analysis,v./n.,We need to analyse the data carefully.,Examine in detail
+B2,Formal & Academic Vocabulary,Evaluate / Evaluation,v./n.,The committee will evaluate the proposal.,Judge the value of
+B2,Formal & Academic Vocabulary,Establish,v.,The company was established in 1990.,Set up / prove
+B2,Formal & Academic Vocabulary,Demonstrate,v.,He demonstrated how the machine works.,Show / prove
+B2,Formal & Academic Vocabulary,Implement,v.,The new policy was implemented last month.,Put into action
+B2,Formal & Academic Vocabulary,Significant / Significantly,adj./adv.,There was a significant improvement.,Important / notable
+B2,Formal & Academic Vocabulary,Impact (on),n./v.,Social media has a huge impact on society.,Effect / influence
+B2,Formal & Academic Vocabulary,Perspective / Point of view,n.,From a medical perspective this is dangerous.,Way of seeing things
+B2,Formal & Academic Vocabulary,Evidence,n.,What evidence supports this claim?,Proof / facts
+B2,Formal & Academic Vocabulary,Contrast / Compare,v.,Compare these two theories.,Note differences / similarities
+B2,Common Idioms,Break the ice,idiom,He told a joke to break the ice.,Ease tension in a new situation
+B2,Common Idioms,Hit the nail on the head,idiom,You've hit the nail on the head.,Be exactly right
+B2,Common Idioms,Once in a blue moon,idiom,I only see her once in a blue moon.,Very rarely
+B2,Common Idioms,Under the weather,idiom,I'm feeling a bit under the weather.,Feel unwell
+B2,Common Idioms,Bite off more than you can chew,idiom,He took on too many projects — he bit off more than he could chew.,Take on too much
+B2,Common Idioms,The ball is in your court,idiom,I've made my offer — the ball is in your court now.,It's your decision / turn
+B2,Common Idioms,Cost an arm and a leg,idiom,That car costs an arm and a leg.,Very expensive
+B2,Common Idioms,Let the cat out of the bag,idiom,She let the cat out of the bag about the surprise.,Accidentally reveal a secret
+B2,Common Idioms,Sit on the fence,idiom,Stop sitting on the fence and decide!,Avoid taking sides
+B2,Common Idioms,Spill the beans,idiom,Don't spill the beans before the announcement.,Reveal secret information
+B2,Common Idioms,Beat around the bush,idiom,Stop beating around the bush — tell me!,Avoid the main topic
+B2,Common Idioms,Hit the sack,idiom,I'm exhausted — I'm going to hit the sack.,Go to bed
+B2,Word Formation,un- (unhappy unbelievable),prefix,That's unbelievable!,Negative / reverse
+B2,Word Formation,re- (redo reconsider),prefix,Please redo the exercise.,Again / back
+B2,Word Formation,over- (overwork overestimate),prefix,Don't overestimate the difficulty.,Too much / excessively
+B2,Word Formation,mis- (misunderstand mislead),prefix,I misunderstood the question.,Wrong / bad
+B2,Word Formation,-tion/-sion (education decision),suffix,The decision was difficult.,Noun from verb
+B2,Word Formation,-ness (happiness darkness),suffix,Happiness is important.,Noun from adjective
+B2,Word Formation,-ful / -less (careful / careless),suffix,Be careful! Don't be careless.,Full of / without
+B2,Word Formation,-ment (improvement management),suffix,There's been a huge improvement.,Noun from verb
+B2,Word Formation,-ly (quickly seriously),suffix,She speaks quickly.,Adverb from adjective
+B2,Word Formation,-er / -or (teacher director),suffix,The director cancelled the meeting.,Person who does sth
+B2,Complex Phrasal Verbs,Come up with,phr. v.,She came up with a brilliant idea.,Think of / produce
+B2,Complex Phrasal Verbs,Look into,phr. v.,The police are looking into the case.,Investigate
+B2,Complex Phrasal Verbs,Put off,phr. v.,Don't put off what you can do today.,Postpone / delay
+B2,Complex Phrasal Verbs,Take over,phr. v.,She took over the company last year.,Assume control
+B2,Complex Phrasal Verbs,Break down,phr. v.,The car broke down on the motorway.,Stop working / collapse emotionally
+B2,Complex Phrasal Verbs,Get over,phr. v.,It took him months to get over the illness.,Recover from
+B2,Complex Phrasal Verbs,Pull off,phr. v.,He pulled off an incredible performance.,Succeed at sth difficult
+B2,Complex Phrasal Verbs,Back down,phr. v.,She refused to back down during the argument.,Withdraw from a position
+B2,Complex Phrasal Verbs,Work out,phr. v.,Everything will work out in the end.,Be resolved / exercise
+B2,Complex Phrasal Verbs,Narrow down,phr. v.,We narrowed down the candidates to three.,Reduce options
+B2,Feelings & Attitudes,Enthusiastic (about),adj.,She's enthusiastic about the project.,Very interested / excited
+B2,Feelings & Attitudes,Reluctant (to),adj.,He was reluctant to admit his mistake.,Unwilling / hesitant
+B2,Feelings & Attitudes,Overwhelmed (by),adj.,I feel overwhelmed by all the tasks.,Too much to cope with
+B2,Feelings & Attitudes,Frustrated (with),adj.,She was frustrated with the slow progress.,Annoyed due to obstacles
+B2,Feelings & Attitudes,Anxious (about),adj.,I'm anxious about the interview.,Worried / nervous
+B2,Feelings & Attitudes,Relieved (that),adj.,I was relieved that the exam went well.,Free from worry after an event
+B2,Feelings & Attitudes,Indifferent (to),adj.,He seemed indifferent to her opinion.,Not caring either way
+B2,Feelings & Attitudes,Confident (in / about),adj.,She is confident in her abilities.,Sure of oneself
+B2,Media & Technology,Social media / Platform,n.,Social media platforms influence public opinion.,
+B2,Media & Technology,Algorithm,n.,The algorithm shows you content you like.,Set of rules for computation
+B2,Media & Technology,Artificial intelligence (AI),n.,AI is transforming many industries.,
+B2,Media & Technology,Data privacy,n.,Data privacy is a growing concern.,Protection of personal info
+B2,Media & Technology,Viral (go viral),adj./expr.,The video went viral overnight.,Spread rapidly online
+B2,Media & Technology,Broadband / Wi-Fi,n.,Fast broadband is essential for remote work.,Internet connection types
+B2,Media & Technology,Cybersecurity,n.,Companies invest heavily in cybersecurity.,Protection against digital threats
+B2,Media & Technology,Update / Upgrade,v.,Update your software regularly.,New version / improved version
+C1,Advanced Academic Vocabulary,Albeit,conj.,The results were positive albeit inconclusive.,Although (formal)
+C1,Advanced Academic Vocabulary,Endeavour (to),v./n.,We must endeavour to reduce inequality.,Try hard (formal)
+C1,Advanced Academic Vocabulary,Notion,n.,I reject the notion that failure is permanent.,Idea / concept
+C1,Advanced Academic Vocabulary,Pervasive,adj.,Social media has a pervasive influence.,Spreading throughout
+C1,Advanced Academic Vocabulary,Nuance / Nuanced,n./adj.,His argument lacks nuance.,Subtle difference in meaning
+C1,Advanced Academic Vocabulary,Articulate,adj./v.,She is very articulate in her presentations.,Express clearly / able to speak well
+C1,Advanced Academic Vocabulary,Substantiate,v.,Can you substantiate that claim with evidence?,Provide evidence for
+C1,Advanced Academic Vocabulary,Juxtapose,v.,The author juxtaposes wealth and poverty.,Place side by side to contrast
+C1,Advanced Academic Vocabulary,Mitigate,v.,Measures were taken to mitigate the risks.,Reduce severity / lessen
+C1,Advanced Academic Vocabulary,Unprecedented,adj.,The pandemic caused unprecedented disruption.,Never happened before
+C1,Advanced Academic Vocabulary,Advocate (for),v./n.,She advocates for equal rights.,Support publicly / a supporter
+C1,Advanced Academic Vocabulary,Pragmatic,adj.,We need a pragmatic approach to the problem.,Practical / focused on results
+C1,Advanced Idioms,A blessing in disguise,idiom,Losing that job was a blessing in disguise.,Something good that seemed bad
+C1,Advanced Idioms,Burn one's bridges,idiom,Don't burn your bridges — you may need them.,Ruin future opportunities
+C1,Advanced Idioms,Cut corners,idiom,They cut corners on safety procedures.,Do sth poorly to save time / money
+C1,Advanced Idioms,Draw a blank,idiom,I drew a blank when he asked my name.,Fail to remember / get no result
+C1,Advanced Idioms,The tip of the iceberg,idiom,The problems we see are just the tip of the iceberg.,Small visible part of a larger problem
+C1,Advanced Idioms,Go back to square one,idiom,The plan failed — we're back to square one.,Start again from the beginning
+C1,Advanced Idioms,Keep a low profile,idiom,He kept a low profile after the scandal.,Avoid attention
+C1,Advanced Idioms,Move the goalposts,idiom,They kept moving the goalposts on the project.,Change the rules unexpectedly
+C1,Advanced Idioms,Read between the lines,idiom,Read between the lines — she's not happy.,Find hidden meaning
+C1,Advanced Idioms,Take with a grain of salt,idiom,Take his advice with a grain of salt.,Be sceptical / don't fully believe
+C1,Formal Discourse Markers,Notwithstanding,prep./adv.,Notwithstanding the risks we proceeded.,Despite (very formal)
+C1,Formal Discourse Markers,Henceforth,adv.,Henceforth all requests must be in writing.,From this time forward
+C1,Formal Discourse Markers,Inasmuch as,conj.,I agree inasmuch as the evidence supports it.,To the extent that
+C1,Formal Discourse Markers,By virtue of,prep.,By virtue of her experience she was chosen.,Because of / due to
+C1,Formal Discourse Markers,With respect to,prep.,With respect to the budget there are concerns.,Regarding (formal)
+C1,Formal Discourse Markers,In lieu of,prep.,Cash was paid in lieu of goods.,Instead of (formal)
+C1,Formal Discourse Markers,To the extent that,expr.,Trust has broken down to the extent that talks have failed.,As much as / given that
+C1,Formal Discourse Markers,Be that as it may,expr.,Be that as it may we must press forward.,Even so / regardless
+C1,Nuanced Communication Verbs,Assert,v.,She asserted her right to remain silent.,State firmly / confidently
+C1,Nuanced Communication Verbs,Concede,v.,He conceded that he was wrong.,Admit reluctantly
+C1,Nuanced Communication Verbs,Insinuate,v.,Are you insinuating that I lied?,Suggest indirectly / hint
+C1,Nuanced Communication Verbs,Elaborate (on),v.,Could you elaborate on that point?,Explain in more detail
+C1,Nuanced Communication Verbs,Clarify,v.,Let me clarify what I meant.,Make clear
+C1,Nuanced Communication Verbs,Refute,v.,She refuted all the accusations.,Prove wrong / disprove
+C1,Nuanced Communication Verbs,Allude to,v.,He alluded to problems in the team.,Refer to indirectly
+C1,Nuanced Communication Verbs,Imply,v.,What exactly are you implying?,Suggest without stating directly
+C1,Nuanced Communication Verbs,Acknowledge,v.,She acknowledged the mistake publicly.,Accept / recognise
+C1,Nuanced Communication Verbs,Reiterate,v.,I want to reiterate my main point.,Say again / repeat

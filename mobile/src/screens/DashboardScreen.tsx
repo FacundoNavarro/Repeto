@@ -6,179 +6,169 @@ import {
 import { useFocusEffect } from '@react-navigation/native';
 import { api } from '../services/api';
 import { Stats } from '../types';
+import { C } from '../theme';
 
-const NIVEL_LABELS = ['Nuevo', 'Aprendiendo', 'Familiar', 'Bueno', 'Muy bueno', 'Dominado'];
-const NIVEL_COLORS = ['#bdc3c7', '#e67e22', '#f1c40f', '#2ecc71', '#27ae60', '#1a8a4c'];
+const DIAS = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
 
-function NivelBadge({ nivel }: { nivel: number }) {
+function WeekBar({ semana }: { semana: Stats['semana'] }) {
+  const hoy = new Date().getDay(); // 0=domingo
+  const max = Math.max(...semana.map(d => d.palabras), 1);
+
+  // Construir los 7 días (hoy hacia atrás)
+  const bars = Array.from({ length: 7 }, (_, i) => {
+    const date = new Date();
+    date.setDate(date.getDate() - (6 - i));
+    const isoDate = date.toISOString().slice(0, 10);
+    const entry = semana.find(d => String(d.dia).slice(0, 10) === isoDate);
+    const palabras = entry?.palabras ?? 0;
+    const isToday  = i === 6;
+    const diaNombre = DIAS[date.getDay()];
+    return { palabras, isToday, diaNombre, height: Math.max((palabras / max) * 44, palabras > 0 ? 4 : 0) };
+  });
+
   return (
-    <View style={[styles.badge, { backgroundColor: NIVEL_COLORS[nivel] }]}>
-      <Text style={styles.badgeText}>{NIVEL_LABELS[nivel]}</Text>
+    <View style={s.barChart}>
+      {bars.map((b, i) => (
+        <View key={i} style={s.barCol}>
+          <View style={s.barTrack}>
+            <View style={[s.barFill, { height: b.height, backgroundColor: b.isToday ? C.accent : C.bar }]} />
+          </View>
+          <Text style={[s.barLbl, b.isToday && s.barLblToday]}>{b.diaNombre}</Text>
+        </View>
+      ))}
     </View>
   );
 }
 
-function formatFecha(iso: string) {
-  const d = new Date(iso);
-  return d.toLocaleDateString('es-AR', { day: '2-digit', month: 'short' });
-}
-
 export default function DashboardScreen() {
-  const [stats, setStats] = useState<Stats | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [stats, setStats]         = useState<Stats | null>(null);
+  const [loading, setLoading]     = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
   async function cargar() {
-    try {
-      const data = await api.stats.mis();
-      setStats(data);
-    } catch {}
-    setLoading(false);
-    setRefreshing(false);
+    try { const data = await api.stats.mis(); setStats(data); } catch {}
+    setLoading(false); setRefreshing(false);
   }
 
   useFocusEffect(useCallback(() => { setLoading(true); cargar(); }, []));
 
-  if (loading) {
-    return <View style={styles.center}><ActivityIndicator size="large" color="#4A90D9" /></View>;
-  }
+  if (loading) return (
+    <View style={s.center}><ActivityIndicator size="large" color={C.accent} /></View>
+  );
 
-  if (!stats) {
-    return <View style={styles.center}><Text style={styles.empty}>No se pudo cargar el dashboard</Text></View>;
-  }
+  if (!stats) return (
+    <View style={s.center}><Text style={s.empty}>No se pudo cargar el progreso</Text></View>
+  );
 
   const precision = stats.aciertos_total + stats.errores_total > 0
     ? Math.round(stats.aciertos_total / (stats.aciertos_total + stats.errores_total) * 100)
     : 0;
 
+  const mesActual = new Date().toLocaleString('es-AR', { month: 'long', year: 'numeric' });
+
   return (
     <ScrollView
-      style={styles.container}
+      style={s.container}
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => { setRefreshing(true); cargar(); }} />}
     >
-      {/* Nivel global */}
-      <View style={styles.nivelCard}>
-        <Text style={styles.nivelLabel}>Nivel global</Text>
-        <Text style={styles.nivelNum}>{stats.nivel_global}</Text>
-        <NivelBadge nivel={Math.min(stats.nivel_global, 5)} />
-        {stats.racha_dias > 0 && (
-          <Text style={styles.racha}>🔥 {stats.racha_dias} día{stats.racha_dias !== 1 ? 's' : ''} seguidos</Text>
-        )}
-      </View>
+      <Text style={s.pageTitle}>Progreso</Text>
+      <Text style={s.pageSub}>{mesActual}</Text>
 
-      {/* Stats rápidas */}
-      <View style={styles.statsGrid}>
-        <View style={styles.statBox}>
-          <Text style={styles.statNum}>{stats.total_palabras}</Text>
-          <Text style={styles.statLabel}>Palabras</Text>
+      {/* Streak */}
+      <View style={s.streakCard}>
+        <View>
+          <Text style={s.streakNum}>{stats.racha_dias}</Text>
+          <Text style={s.streakDays}>día{stats.racha_dias !== 1 ? 's' : ''} de racha</Text>
         </View>
-        <View style={styles.statBox}>
-          <Text style={styles.statNum}>{stats.palabras_dominadas}</Text>
-          <Text style={styles.statLabel}>Dominadas</Text>
-        </View>
-        <View style={styles.statBox}>
-          <Text style={styles.statNum}>{precision}%</Text>
-          <Text style={styles.statLabel}>Precisión</Text>
-        </View>
-        <View style={styles.statBox}>
-          <Text style={styles.statNum}>{stats.pendientes_hoy}</Text>
-          <Text style={styles.statLabel}>Para hoy</Text>
+        <View style={{ flex: 1 }} />
+        <View style={s.streakIcon}>
+          <Text style={{ fontSize: 22 }}>🔥</Text>
         </View>
       </View>
 
-      {/* Distribución por nivel */}
-      {stats.distribucion_niveles.length > 0 && (
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Distribución por nivel</Text>
-          {stats.distribucion_niveles.map(({ nivel, cantidad }) => (
-            <View key={nivel} style={styles.distRow}>
-              <Text style={styles.distLabel}>{NIVEL_LABELS[nivel]}</Text>
-              <View style={styles.distBarBg}>
-                <View style={[
-                  styles.distBarFill,
-                  { width: `${(cantidad / stats.total_palabras) * 100}%`, backgroundColor: NIVEL_COLORS[nivel] }
-                ]} />
-              </View>
-              <Text style={styles.distCount}>{cantidad}</Text>
-            </View>
-          ))}
+      {/* Stat cards */}
+      <View style={s.statRow}>
+        <View style={s.statCard}>
+          <Text style={s.statNum}>{stats.pendientes_hoy}</Text>
+          <Text style={s.statLabel}>palabras hoy</Text>
         </View>
-      )}
+        <View style={s.statCard}>
+          <Text style={[s.statNum, { color: C.ok }]}>{precision}%</Text>
+          <Text style={s.statLabel}>precisión</Text>
+        </View>
+      </View>
+
+      {/* Weekly chart */}
+      <View style={s.section}>
+        <Text style={s.sectionTitle}>Esta semana</Text>
+        <WeekBar semana={stats.semana} />
+      </View>
 
       {/* Por categoría */}
-      {stats.por_categoria.length > 0 && (
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Por categoría</Text>
-          {stats.por_categoria.map(cat => (
-            <View key={cat.id} style={styles.catRow}>
-              <View style={[styles.catDot, { backgroundColor: cat.color ?? '#ccc' }]} />
-              <Text style={styles.catNombre} numberOfLines={1}>{cat.nombre}</Text>
-              <Text style={styles.catStats}>{cat.dominadas}/{cat.total}</Text>
+      {stats.por_categoria.filter(c => c.total > 0).length > 0 && (
+        <View>
+          <Text style={s.sectionTitle}>Por categoría</Text>
+          {stats.por_categoria.filter(c => c.total > 0).slice(0, 5).map(cat => (
+            <View key={cat.id} style={s.catCard}>
+              <View style={s.catRow}>
+                <Text style={s.catName}>{cat.nombre}</Text>
+                <Text style={s.catCount}>{cat.dominadas} / {cat.total}</Text>
+              </View>
+              <View style={s.miniTrack}>
+                <View style={[s.miniFill, {
+                  width: `${cat.total > 0 ? (cat.dominadas / cat.total) * 100 : 0}%` as any,
+                  backgroundColor: cat.color ?? C.accent,
+                }]} />
+              </View>
             </View>
           ))}
         </View>
       )}
 
-      {/* Sesiones recientes */}
-      {stats.sesiones_recientes.length > 0 && (
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Sesiones recientes</Text>
-          {stats.sesiones_recientes.map(s => (
-            <View key={s.id} style={styles.sesionRow}>
-              <Text style={styles.sesionFecha}>{formatFecha(s.fecha)}</Text>
-              <Text style={styles.sesionInfo}>
-                {s.palabras_vistas} palabras · {s.aciertos} bien · {s.errores} mal
-              </Text>
-              <Text style={[styles.sesionModo, s.modo === 'srs' ? styles.modoSrs : styles.modoLibre]}>
-                {s.modo.toUpperCase()}
-              </Text>
-            </View>
-          ))}
-        </View>
-      )}
+      {/* Total badge */}
+      <View style={s.totalBadge}>
+        <Text style={s.totalNum}>{stats.palabras_dominadas}</Text>
+        <Text style={s.totalInfo}>palabras{'\n'}aprendidas</Text>
+      </View>
 
-      {stats.total_palabras === 0 && (
-        <View style={styles.emptyBox}>
-          <Text style={styles.emptyEmoji}>📚</Text>
-          <Text style={styles.emptyText}>Todavía no estudiaste ninguna palabra.</Text>
-        </View>
-      )}
     </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
-  container:    { flex: 1, backgroundColor: '#f5f5f5', padding: 16 },
-  center:       { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  nivelCard:    { backgroundColor: '#4A90D9', borderRadius: 20, padding: 28, alignItems: 'center', marginBottom: 16 },
-  nivelLabel:   { color: 'rgba(255,255,255,0.8)', fontSize: 14, fontWeight: '600', marginBottom: 4 },
-  nivelNum:     { color: '#fff', fontSize: 64, fontWeight: '900', lineHeight: 72 },
-  badge:        { borderRadius: 12, paddingHorizontal: 14, paddingVertical: 5, marginTop: 8 },
-  badgeText:    { color: '#fff', fontWeight: '700', fontSize: 13 },
-  racha:        { color: 'rgba(255,255,255,0.9)', marginTop: 12, fontSize: 15 },
-  statsGrid:    { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginBottom: 16 },
-  statBox:      { flex: 1, minWidth: '45%', backgroundColor: '#fff', borderRadius: 14, padding: 16, alignItems: 'center' },
-  statNum:      { fontSize: 28, fontWeight: '800', color: '#1a1a2e' },
-  statLabel:    { fontSize: 13, color: '#888', marginTop: 4 },
-  section:      { backgroundColor: '#fff', borderRadius: 14, padding: 16, marginBottom: 16 },
-  sectionTitle: { fontSize: 16, fontWeight: '700', color: '#1a1a2e', marginBottom: 14 },
-  distRow:      { flexDirection: 'row', alignItems: 'center', marginBottom: 10, gap: 8 },
-  distLabel:    { width: 90, fontSize: 13, color: '#555' },
-  distBarBg:    { flex: 1, height: 8, backgroundColor: '#eee', borderRadius: 4, overflow: 'hidden' },
-  distBarFill:  { height: 8, borderRadius: 4 },
-  distCount:    { width: 28, textAlign: 'right', fontSize: 13, color: '#888' },
-  catRow:       { flexDirection: 'row', alignItems: 'center', paddingVertical: 8, gap: 10, borderBottomWidth: 1, borderBottomColor: '#f0f0f0' },
-  catDot:       { width: 12, height: 12, borderRadius: 6 },
-  catNombre:    { flex: 1, fontSize: 15, color: '#1a1a2e' },
-  catStats:     { fontSize: 14, color: '#888', fontWeight: '600' },
-  sesionRow:    { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#f0f0f0', gap: 8 },
-  sesionFecha:  { width: 48, fontSize: 13, color: '#888' },
-  sesionInfo:   { flex: 1, fontSize: 13, color: '#444' },
-  sesionModo:   { fontSize: 11, fontWeight: '700', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 8 },
-  modoSrs:      { backgroundColor: '#EBF5FB', color: '#2980b9' },
-  modoLibre:    { backgroundColor: '#EAFAF1', color: '#27ae60' },
-  empty:        { color: '#888', fontSize: 16 },
-  emptyBox:     { alignItems: 'center', padding: 32, gap: 12 },
-  emptyEmoji:   { fontSize: 48 },
-  emptyText:    { color: '#888', fontSize: 15, textAlign: 'center' },
+const s = StyleSheet.create({
+  container:    { flex: 1, backgroundColor: C.bg, padding: 16 },
+  center:       { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: C.bg },
+  empty:        { color: C.textMid, fontSize: 16 },
+  pageTitle:    { fontSize: 22, fontWeight: '800', color: C.text, marginBottom: 2 },
+  pageSub:      { fontSize: 11, color: C.textMid, marginBottom: 14 },
+
+  streakCard:   { backgroundColor: C.accent, borderRadius: 16, padding: 14, flexDirection: 'row', alignItems: 'center', marginBottom: 10 },
+  streakNum:    { fontSize: 30, fontWeight: '800', color: C.white, lineHeight: 34 },
+  streakDays:   { fontSize: 12, fontWeight: '500', color: C.navy },
+  streakIcon:   { width: 44, height: 44, backgroundColor: C.orange, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
+
+  statRow:      { flexDirection: 'row', gap: 8, marginBottom: 14 },
+  statCard:     { flex: 1, backgroundColor: C.white, borderRadius: 14, padding: 12, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.05, shadowRadius: 8, elevation: 2 },
+  statNum:      { fontSize: 22, fontWeight: '800', color: C.text, lineHeight: 26 },
+  statLabel:    { fontSize: 10, color: C.textMid, marginTop: 4 },
+
+  section:      { backgroundColor: C.white, borderRadius: 14, padding: 14, marginBottom: 14, shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.04, shadowRadius: 6, elevation: 1 },
+  sectionTitle: { fontSize: 13, fontWeight: '600', color: C.text, marginBottom: 12 },
+  barChart:     { flexDirection: 'row', gap: 5, alignItems: 'flex-end', height: 60 },
+  barCol:       { flex: 1, alignItems: 'center', gap: 4 },
+  barTrack:     { width: '100%', height: 44, backgroundColor: C.track, borderRadius: 5, justifyContent: 'flex-end' },
+  barFill:      { borderRadius: 5, width: '100%' },
+  barLbl:       { fontSize: 9, color: C.textMid },
+  barLblToday:  { color: C.text, fontWeight: '600' },
+
+  catCard:      { backgroundColor: C.white, borderRadius: 12, padding: 10, marginBottom: 6, shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.04, shadowRadius: 4, elevation: 1 },
+  catRow:       { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
+  catName:      { fontSize: 11, fontWeight: '600', color: C.text },
+  catCount:     { fontSize: 10, color: C.textMid },
+  miniTrack:    { height: 3, backgroundColor: C.track, borderRadius: 2 },
+  miniFill:     { height: 3, borderRadius: 2 },
+
+  totalBadge:   { backgroundColor: C.accentL, borderRadius: 14, padding: 14, flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 6, marginBottom: 20 },
+  totalNum:     { fontSize: 24, fontWeight: '800', color: C.accent },
+  totalInfo:    { fontSize: 12, fontWeight: '600', color: C.accent, lineHeight: 18 },
 });
